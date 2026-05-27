@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <div class="emoji" style="border: 2px solid black; height: 200px; width: 200px;"></div>
+
+    <script>
+        // function test()
+        // {
+
+        // }
+        // let obj={
+        // functio demo()
+        // {
+
+        // }
+
+        // }
+
+
+        // let obj={
+        //     name:"rath",
+        //     age:10
+        // }
+        // console.log(obj);
+
+
+
+
+
+        // let arr=[1,2,3,4];
+        
+        // let a=arr.sort((a,b)=>{a-b});
+        // console.log("Small Number:",a[0]);
+        // console.log("Biggest Number:",a[a.length-1]);
+        
+
+        // //Big
+        // let b=arr.reduce((acc,el)=>{
+        //     return acc>el?acc:el;
+        // });
+        // console.log("Big:",b)
+
+        // //Small
+        // let c=arr.reduce((acc,el)=>{
+        //     return acc>el?el:acc;
+        // });
+        // console.log("Small:",c)
+
+
+
+        // //prime
+        // let n=10;
+        // console.log(isPrime(n)?"yes":"Not prime")
+
+        // function isPrime(n)
+        // {
+        //     for(let i=2;i<=n/2;i++)
+        //     {
+        //         if(n%i==0)
+        //         {
+        //             return false;
+        //         }
+        //     }
+        //     return true;
+        // }
+
+
+        // //factorial
+        // let num=5;
+        // let fact=1;
+        // while(num>0)
+        // {
+        //     fact=fact*num;
+        //     num--;
+        // }
+        // console.log(fact);
+        
+
+        // let arr=[1,1,1,true,"hii",{
+        //     brand:"poco",
+        //     ram:2
+        // }];
+        // console.log(arr[0]);
+
+        // let mob={
+        //     brand:"poco",
+        //     ram:2
+        // }
+        // console.log(mob.brand);
+
+        // arr.unshift("2");
+        // console.log(arr);
+        // console.log(arr.length);
+
+        // function fun()
+        // {
+        //     console.log("hi");
+        // }
+        // fun();
+
+        // ()=>{
+        //     console.log("hi")
+        // }
+        
+
+
+        // let arr=["❤️","😊","😂","🤣","😍","😒"];
+
+        // let arr=[4,2,3];
+
+        // arr.forEach((el)=>{
+        //     console.log(el);
+        // })
+
+        // let newArr=arr.map((el)=>{
+        //     return el+2;
+        // })
+        // console.log(newArr);
+
+        // let newArr1=arr.filter((el)=>{
+        //     return el%2==0;
+        // })
+        // console.log(newArr1);
+
+        // let v=arr.reduce((acc,el)=>{
+        //     return acc+el;
+        // })
+        // console.log(v);
+        
+
+        
+
+        // let players = [  { id: 1, name: "Arun", age: 24, sports: ["Cricket", "Football"] },  
+        // { id: 2, name: "Bhavya", age: 28, sports: ["Tennis"] }, 
+        // { id: 3, name: "Charan", age: 30, sports: ["Cricket"] }, 
+        // { id: 4, name: "Divya", age: 22, sports: ["Football", "Hockey"] },  
+        // { id: 5, name: "Eshan", age: 27, sports: ["Cricket", "Tennis"] }];
+        
+
+        // var crCount=0;
+        //     let tenCount=0;
+        //     let fbCount=0;
+        //     let hocCount=0;
+        // function fun()
+        // {
+        //     // players.forEach((el)=>{
+        //     //     console.log(el.name,el.sports);
+                
+        //     // })
+
+            
+
+        //     players.forEach((el)=>{
+        //         if(el.sports.includes("Cricket"))
+        //     {
+        //         crCount++;
+        //     }
+
+        //      if(el.sports.includes("Tennis"))
+        //     {
+        //         tenCount++;
+        //     }
+
+        //      if(el.sports.includes("Football"))
+        //     {
+        //         fbCount++;
+        //     }
+
+        //      if(el.sports.includes("Hockey"))
+        //     {
+        //         hocCount++;
+        //     }
+        //     })
+
+        // }
+        // console.log( `Cricket: ${crCount} Football: ${fbCount}`)
+
+
+        // fun()
+        // console.log( `Cricket: ${crCount} Football: ${fbCount}`)
+
+        //Qualifier
+
+        //SQL
+
+        // select p.first_name, p.last_name,p.weight, t.location, t.duration
+        // from PLAYERS p 
+        // join TRAININGSESSION t
+        // on p.team_id=t.team_id
+        // where p.weight between 135 and 200
+        // order by name asc,duration desc;
+
+        //JS
+
+        
+
+
+        function checkSleepDuration()
+        {
+        let name = document.getElementById('name').value();
+        let age= document.getElementById('age').value();
+        let lifestyle=document.getElementById('lifestyle').value();
+        let sleepwindow=document.getElementById('sleepwindow').value();
+
+
+        let sleephours=calculateRecommendedSleep(age,lifestyle);
+        let feedback=getSleepDurationFeedback(sleepwindow,sleephours);
+
+        document.getElementById('sleepResult').innerHTML=`Hi ${name} you slept for ${sleepwindow}. feedback is${feedback}`;
+        }
+        
+
+
+        function calculateRecommendedSleep(age,lifestyle)
+        {
+            if(age<18)
+            {
+                if(lifestyle=='sedenary')
+                {
+                    return 9+1;
+                }
+                if(lifestyle=='veryactive')
+                {
+                    return 9-1;
+                }
+                return 9;
+            }
+            if(age>60)
+            {
+                if(lifestyle=='sedenary')
+                {
+                    return 7+1;
+                }
+                if(lifestyle=='veryactive')
+                {
+                    return 7-1;
+                }
+                return 7;
+            }
+            if(age>18 && age<60)
+            {
+                if(lifestyle=='sedenary')
+                {
+                    return 8+1;
+                }
+                if(lifestyle=='veryactive')
+                {
+                    return 8-1;
+                }
+                return 8;
+            }
+        }
+
+        function getSleepDurationFeedback(sleepwindow,sleephours)
+        {
+            if(sleephours==0)
+            {
+                return "not slept";
+            }
+            if(sleephours==sleepwindow)
+            {
+                return "great";
+            }
+            if(sleephours<sleepwindow)
+            {
+                let need=sleephours-sleepwindow;
+                return `you need to sleep ${need} hours`;
+            }
+            if(sleephours>sleepwindow)
+            {
+                let need=sleephours-sleepwindow;
+                return `you need to sleep ${Math.abs(need)} hours`;
+            }
+
+        }
+        
+    </script>
+</body>
+</html>
